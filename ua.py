@@ -10,9 +10,12 @@ def is_valid(email): # multiple function calls at same time
     parts = email.split()
     local, domain = parts[0], parts[1]
 
-    #Handle Loacal Section
+    #Handle Local Section
 
     #Handle Domain section
+    if (domain.length() > 255 or domain.length() < 1) or domain.endswith('.') or domain.count("..") > 0:
+        return False
 
+    return True
 
 
